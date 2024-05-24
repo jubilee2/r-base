@@ -19,7 +19,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libudunits2-dev
 #  libmagick++-dev 
 #  libgdal-dev
-
+# gtsummary
+#  libv8-dev
+#  
 
 # install system dependencies
 RUN apt-get update
@@ -34,7 +36,8 @@ RUN apt-get install -y \
   cmake \
   libudunits2-dev \
   libmagick++-dev \
-  libgdal-dev
+  libgdal-dev \
+  libv8-dev
 
 # RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
