@@ -30,3 +30,4 @@ jobs:
           context: .
           load: true
           tags: jubilee2/r-base:dev
+          push: true
