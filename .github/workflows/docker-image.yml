@@ -29,4 +29,4 @@ jobs:
       with:
           context: .
           load: true
-          tags: jubilee2/r-base:$(date +%s)
+          tags: jubilee2/r-base:dev
