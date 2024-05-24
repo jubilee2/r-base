@@ -13,7 +13,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libfontconfig1-dev
 #  libharfbuzz-dev libfribidi-dev 
 #  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
-
+# doBy
+#  cmake
 
 # install system dependencies
 RUN apt-get update
@@ -24,12 +25,13 @@ RUN apt-get install -y \
   libssl-dev \
   libfontconfig1-dev \
   libharfbuzz-dev libfribidi-dev \
-  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
+  cmake
 
 # RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('data.table', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('devtools', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('devtools', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('doBy', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('DT', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('eeptools', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
