@@ -21,7 +21,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libgdal-dev
 # gtsummary
 #  libv8-dev
-#  
+# knitr
+#  cargo
 
 # install system dependencies
 RUN apt-get update
@@ -37,7 +38,8 @@ RUN apt-get install -y \
   libudunits2-dev \
   libmagick++-dev \
   libgdal-dev \
-  libv8-dev
+  libv8-dev \
+  cargo
 
 # RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
@@ -58,14 +60,14 @@ RUN apt-get install -y \
 # RUN Rscript -e "withCallingHandlers(install.packages('ggsci', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('ggvenn', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('greport', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('gtsummary', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('Hmisc', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('htmlTable', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('htmltools', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('janitor', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('kableExtra', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('keyring', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
-RUN Rscript -e "withCallingHandlers(install.packages('kinship2', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('gtsummary', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('Hmisc', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('htmlTable', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('htmltools', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('janitor', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('kableExtra', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('keyring', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
+# RUN Rscript -e "withCallingHandlers(install.packages('kinship2', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('knitr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('mice', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('modeest', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
