@@ -11,8 +11,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libssl-dev \
 # devtools
 #  libfontconfig1-dev
-#  libharfbuzz-dev
-#  libfribidi-dev 
+#  libharfbuzz-dev libfribidi-dev 
+#  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
 
 # install system dependencies
@@ -23,8 +23,8 @@ RUN apt-get install -y \
   libxml2-dev \
   libssl-dev \
   libfontconfig1-dev \
-  libharfbuzz-dev \
-  libfribidi-dev 
+  libharfbuzz-dev libfribidi-dev \
+  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
 # RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
