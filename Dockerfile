@@ -4,9 +4,21 @@ FROM r-base:4.4.0
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# blastula
+#  libsodium-dev \
+#  libcurl4-openssl-dev \
+#  libxml2-dev \
+#  libssl-dev \
+
+
 # install system dependencies
 RUN apt-get update
-
+RUN apt-get install -y \
+  libsodium-dev \
+  libcurl4-openssl-dev \
+  libxml2-dev \
+  libssl-dev
+  
 
 RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
