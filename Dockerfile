@@ -15,6 +15,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 # doBy
 #  cmake
+# ggpattern
+#  libudunits2-dev
+#  libmagick++-dev 
+
 
 # install system dependencies
 RUN apt-get update
@@ -26,7 +30,9 @@ RUN apt-get install -y \
   libfontconfig1-dev \
   libharfbuzz-dev libfribidi-dev \
   libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
-  cmake
+  cmake \
+  libudunits2-dev \
+  libmagick++-dev 
 
 # RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 # RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
