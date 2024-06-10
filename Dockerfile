@@ -23,6 +23,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  libv8-dev
 # knitr
 #  cargo
+#  texlive-xetex
 
 # install system dependencies
 RUN apt-get update
@@ -40,6 +41,7 @@ RUN apt-get install -y \
   libgdal-dev \
   libv8-dev \
   cargo
+RUN apt install -y texlive-xetex
 
 RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
