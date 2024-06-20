@@ -39,7 +39,8 @@ RUN apt-get install -y \
   libmagick++-dev \
   libgdal-dev \
   libv8-dev \
-  cargo
+  cargo \
+  git
 
 RUN Rscript -e "withCallingHandlers(install.packages('blastula', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
 RUN Rscript -e "withCallingHandlers(install.packages('boxr', dependencies=TRUE, clean = TRUE, quiet = TRUE, Ncpus = 3),warning=stop);"
