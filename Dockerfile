@@ -1,4 +1,4 @@
-FROM r-base:4.4.0
+FROM r-base:4.4.1
 
 # set timezone = America/Chicago
 ENV TZ=America/Chicago
