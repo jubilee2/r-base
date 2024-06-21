@@ -1,4 +1,4 @@
-FROM r-base:4.4.0
+FROM rocker/r-ver:4.4.1
 
 # set timezone = America/Chicago
 ENV TZ=America/Chicago
@@ -25,8 +25,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #  cargo
 
 # install system dependencies
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
   libsodium-dev \
   libcurl4-openssl-dev \
   libxml2-dev \
