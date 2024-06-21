@@ -4,11 +4,6 @@ FROM rocker/r-ver:4.4.1
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-## Revert to the original state before pinning Debian unstable
-RUN rm /etc/apt/sources.list.d/debian-unstable.list \
-        && rm /etc/apt/apt.conf.d/default \
-        && rm /etc/apt/apt.conf.d/90local-no-recommends
-
 # blastula
 #  libsodium-dev \
 #  libcurl4-openssl-dev \
