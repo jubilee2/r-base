@@ -30,13 +30,14 @@ RUN rm /etc/apt/sources.list.d/debian-unstable.list \
 #  cargo
 
 # install system dependencies
+# libharfbuzz-dev 
 RUN apt-get update && apt-get install -y \
   libsodium-dev \
   libcurl4-openssl-dev \
   libxml2-dev \
   libssl-dev \
   libfontconfig1-dev \
-  libharfbuzz-dev libfribidi-dev \
+  libfribidi-dev \
   libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
   cmake \
   libudunits2-dev \
